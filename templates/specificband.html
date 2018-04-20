@@ -1,0 +1,23 @@
+<h3> Welcome to WHAT DID THEY SAY</h3>
+
+<link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='style.css') }}"/>
+
+<h1>ABOUT {{band}}</h1>
+
+<form action="/postreleaseyear" method="POST">
+    <p>The release year of all the {{band}}'s albums</p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+
+<form action="/posttrack" method="POST">
+    <p>The length of {{band}}'s tracks</p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+
+<form action="/postbubble" method="POST">
+    <p>What did {{band}} say</p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+
+<a href="/">Home</a>

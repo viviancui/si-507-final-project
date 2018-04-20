@@ -1,0 +1,13 @@
+<body>
+<h1>Release Year Bar Chart of {{band}}</h1>
+<link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='style.css') }}"/>
+<a href="/specificband/{{band}}">Back</a>
+<div >
+{{ div_placeholder }}
+</div>
+
+<a href="/posttrack">To see the tracks' length distribution of this band</a><br/>
+<a href="/postbubble">To see word cloud of this band</a><br/>
+<a href="/">Home</a>
+</body>

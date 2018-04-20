@@ -1,0 +1,23 @@
+<h3> Welcome to WHAT DID THEY SAY</h3>
+
+<link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='style.css') }}"/>
+
+<!-- <h1>{{title}}!</h1> -->
+<h1>The top bands/artists in your spotify are: </h1>
+<ul>
+{% for ele in artist_list %}
+    <form action="/posttop10" method="POST">
+      <li>
+        <a href="/bubblechart/{{ele}}">{{ele}}</a>
+      </li>
+    <!-- <li><p>{{ele}}</p></li><input type="submit" name={{ele}} value="Check the word cloud"/> -->
+    </form>
+{% endfor %}
+</ul>
+
+<!-- <form action="/posttop10" method="POST">
+    <p><input type="submit" name="top10bandswords" value="See What Did They Say"/></p>
+</form> -->
+
+<a href="/">Home</a>

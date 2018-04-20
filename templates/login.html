@@ -1,0 +1,24 @@
+<h3> Welcome</h3>
+<link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='style.css') }}"/>
+    
+<div>
+<form action="/posttoken" method="POST">
+    <p>To see the top bands in your Spotify<br/>Put in your access token:<br/> <input type="text" name="token"/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+<br/>
+</div>
+<div>
+<form action="/postband" method="POST">
+    <p>To see the wrods said by specific band<br/>Put in the name of the band/artist: <br/><input type="text" name="band"/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+<br/>
+</div>
+<div>
+<form action="/postbillboard" method="POST">
+    <p>See the words in Billboard</p>
+    <p><input type="submit" value="Go"/></p>
+</form>
+</div>
