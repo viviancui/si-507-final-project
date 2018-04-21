@@ -1,29 +1,6 @@
 import json
 import requests
 
-# client_id = 'a0a03de7343147d6a0db32f5a6198646'
-#
-# baseurl = "https://accounts.spotify.com/authorize"
-# params_dict = {}
-# params_dict['client_id'] = client_id
-# params_dict['type'] = 'code'
-# params_dict['redirect_uri'] = 'http://localhost:8888'
-# params_dict['scope'] = 'user-read-private user-read-email user-top-read'
-# x = requests.get(baseurl, params_dict).text
-# print(x)
-#
-# baseurl = "https://accounts.spotify.com/api/token"
-# params_dict = {}
-# params_dict['grant_type'] = 'authorization_code'
-# params_dict['code'] = code
-# params_dict['redirect_uri'] = 'http://localhost:8888'
-# header = { 'Authorization': 'Basic ' + access_token }
-# spotify_response =  requests.get(baseurl, params_dict, headers=header)
-
-
-
-# access_token = input("Access_token: ")
-
 CACHE_FNAME = "dataall_cache.json"
 try:
     cache_file = open(CACHE_FNAME, "r")

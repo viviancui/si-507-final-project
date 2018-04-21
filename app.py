@@ -113,36 +113,6 @@ def bubble_chart():
     my_plot_div = plot([Bar(x=bubble_tuple[0], y=bubble_tuple[1])], output_type='div')
     return render_template("/wordcount.html", div_placeholder= Markup(my_plot_div), band=band)
 
-    # return redirect('localhost:8000/bubblechart.html')
-    # f = open('bubblechart_1.json', 'r')
-    # f_text = f.read()
-    # data = json.dumps(f_text)
-    # # band = model.get_band_name()
-    # # model.wordJson(band)
-    # return render_template('bubblechart.html', data=data)
-
-
-
-
-    # with open('bubblechart.json') as json_data:
-    #     d = json.load(json_data)
-
-    # # error = None
-
-    # # if request.method == 'POST':
-    #     # return render_template('/bubblechart.html')
-    #
-    # elif request.method == "GET":
-    #     return redirect(url_for('/', error=error))
-    # # return render_template('/bubblechart.html')
-    #
-    # df = pd.read_csv('data').drop('Open', axis=1)
-    # chart_data = df.to_dict(orient='records')
-    # chart_data = json.dumps(chart_data, indent=2)
-    # data = {'chart_data': chart_data}
-
-    # return render_template("bubblechart.html", data=d)
-
 if __name__ == '__main__':
     if not os.path.exists('whatdidtheysay.db'):
         data_database.create_db()   #using the init() function in the database.py file
