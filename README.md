@@ -5,6 +5,11 @@ OVERVIEW
 Question1
 Data sources used, including instructions for a user to access the data sources (e.g., API keys or client secrets needed, along with a pointer to instructions on how to obtain these and instructions for how to incorporate them into your program (e.g., secrets.py file format))
 
+*Actually, this do need to take several steps,
+so I made a screen recording to show how it works,
+just for your reference:
+https://youtu.be/56DSIFxPol8*
+
 There are two API & a page scraping I have used in this project.
 1 Spotify API
 You can get the client_id & client_secret of Spotify from:
