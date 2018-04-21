@@ -70,7 +70,7 @@ Brief user guide, including how to run the program and how to choose presentatio
 
 There are three sections you can play with:
 1 Put in the specific band/artist name in the first text box.
-i.e. you can put in: Megadeth, or Slayer, or Metallica (these are the data that already been stored in the database)
+i.e. you can put in: Megadeth, or Slayer, or Metallica, or Arch Enemy, or Extreme (these are the data that already been stored in the database)
 After that, you can click any of the three to see the album release distribution, tracks' length distribution, and the most frequent used words in all of the tracks of this band.
 
 2 Paste the access_token into the second text box.

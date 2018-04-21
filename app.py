@@ -61,10 +61,18 @@ def postbillboard():
 # @app.route("/bubblechart/<band>", methods=['GET', 'POST'])
 @app.route("/bubblechart/<band>")
 def posttop10(band):
-    model.add_band_name(band)
-    bubble_tuple = model.word_count(band)
-    my_plot_div = plot([Bar(x=bubble_tuple[0], y=bubble_tuple[1])], output_type='div')
-    return render_template("/wordcount.html", div_placeholder= Markup(my_plot_div), band=band)
+    band_list = data_database.get_band_list()
+    if band not in band_list:
+        data_database.populate_Database(band)
+        model.add_band_name(band)
+        bubble_tuple = model.word_count(band)
+        my_plot_div = plot([Bar(x=bubble_tuple[0], y=bubble_tuple[1])], output_type='div')
+        return render_template("/wordcount.html", div_placeholder= Markup(my_plot_div), band=band)
+    else:
+        model.add_band_name(band)
+        bubble_tuple = model.word_count(band)
+        my_plot_div = plot([Bar(x=bubble_tuple[0], y=bubble_tuple[1])], output_type='div')
+        return render_template("/wordcount.html", div_placeholder= Markup(my_plot_div), band=band)
     # model.wordJson(band)
     # f = open('bubblechart_1.json', 'r')
     # f_text = f.read()
