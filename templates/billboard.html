@@ -4,12 +4,13 @@
     href="{{ url_for('static', filename='style.css') }}"/>
 
 
-<h1>The top 100 bands/artist in the Billboard are: </h1>
+<h1>The top 100 traks' genre distribution: </h1>
 <a href="/">Back</a>
 <div >
 {{ div_placeholder }}
 </div>
 
+<h3>The top 100 trak list in Billboard is: </h3>
 <ul>
 {% for item in billboard_list %}
     <li>{{item}}</li>

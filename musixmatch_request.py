@@ -13,12 +13,12 @@ try:
 except:
     CACHE_DICTION = {}
 
-def unique_i(baseurl, params_dict, mtype):
-    alphabetized_keys = params_dict.keys()
-    res = []
-    for k in alphabetized_keys:
-        res.append("{}-{}".format(k, params_dict[k]))
-    return baseurl + "&".join(res) + mtype
+def unique_i(baseurl, band, mtype):
+    # alphabetized_keys = params_dict.keys()
+    # res = []
+    # for k in alphabetized_keys:
+    #     res.append("{}-{}".format(k, params_dict[k]))
+    return baseurl + str(band) + mtype
 
 def get_artist_request(band):
     baseurl = "http://api.musixmatch.com/ws/1.1/"
@@ -29,7 +29,7 @@ def get_artist_request(band):
     # params_dict["q_artist"] = input("Which band/artist do you like: ")
     params_dict["apikey"] = apikey
 
-    unique_ident = unique_i(baseurl, params_dict, mtype)
+    unique_ident = unique_i(baseurl, band, mtype)
     if unique_ident in CACHE_DICTION:
         return CACHE_DICTION[unique_ident]
     else:
@@ -57,7 +57,7 @@ class Artist():
 
 def get_artist_obj(band):
     musix_json = get_artist_request(band)
-    print(musix_json)
+    # print(musix_json)
     musix_artist_list = musix_json["message"]["body"]["artist_list"]
     artist_id_list = []
     for ele in musix_artist_list:
@@ -80,7 +80,7 @@ def get_album(artist_id):
     params_dict["artist_id"] = artist_id
     params_dict["page_size"] = 100
     params_dict["apikey"] = apikey
-    unique_ident = unique_i(baseurl, params_dict, mtype)
+    unique_ident = unique_i(baseurl, artist_id, mtype)
     if unique_ident in CACHE_DICTION:
         return CACHE_DICTION[unique_ident]
     else:
@@ -133,7 +133,7 @@ def get_tracks(album_id):
     params_dict["album_id"] = album_id
     params_dict["page_size"] = 100
     params_dict["apikey"] = apikey
-    unique_ident = unique_i(baseurl, params_dict, mtype)
+    unique_ident = unique_i(baseurl, album_id, mtype)
     if unique_ident in CACHE_DICTION:
         return CACHE_DICTION[unique_ident]
     else:
@@ -164,7 +164,7 @@ def get_lyrics(track_id):
     params_dict = {}
     params_dict["track_id"] = track_id
     params_dict["apikey"] = apikey
-    unique_ident = unique_i(baseurl, params_dict, mtype)
+    unique_ident = unique_i(baseurl, track_id, mtype)
     if unique_ident in CACHE_DICTION:
         return CACHE_DICTION[unique_ident]
     else:
@@ -222,7 +222,7 @@ def track_search(name):
     params_dict = {}
     params_dict["q_artist"] = name
     params_dict["apikey"] = apikey
-    unique_ident = unique_i(baseurl, params_dict, mtype)
+    unique_ident = unique_i(baseurl, name, mtype)
     if unique_ident in CACHE_DICTION:
         return CACHE_DICTION[unique_ident]
     else:
@@ -241,7 +241,7 @@ def track_get(track_id):
     params_dict = {}
     params_dict["track_id"] = track_id
     params_dict["apikey"] = apikey
-    unique_ident = unique_i(baseurl, params_dict, mtype)
+    unique_ident = unique_i(baseurl, track_id, mtype)
     if unique_ident in CACHE_DICTION:
         return CACHE_DICTION[unique_ident]
     else:

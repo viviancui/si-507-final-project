@@ -33,12 +33,12 @@ try:
 except:
     CACHE_DICTION = {}
 
-def unique_i(baseurl, params_dict, access_token):
+def unique_i(baseurl, params_dict):
     alphabetized_keys = params_dict.keys()
     res = []
     for k in alphabetized_keys:
         res.append("{}-{}".format(k, params_dict[k]))
-    return baseurl + "&".join(res) + access_token
+    return baseurl + "&".join(res)
 
 # access_token = app.js.body.access_token
 def get_top_artists(access_token):
@@ -49,7 +49,7 @@ def get_top_artists(access_token):
     #the max of limit is 50
     params_dict['time_range'] = 'long_term'
     header = { 'Authorization': 'Bearer ' + access_token }
-    unique_ident = unique_i(baseurl, params_dict, access_token)
+    unique_ident = unique_i(baseurl, params_dict)
     if unique_ident in CACHE_DICTION:
         # print(CACHE_DICTION[unique_ident])
         return CACHE_DICTION[unique_ident]
